@@ -1,0 +1,263 @@
+@font-face {
+    font-family: freightbigpro;
+    src: url(./FreightBigProLight-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: freightbigpro;
+}
+html, body {
+  height: 100%;
+  width:100%;
+  background-color: #000000;
+}
+
+.loader{
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 999;
+    /* display: none; */
+}
+.loader .yellow1{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: #F5E31A;
+    z-index: 9;
+}
+.loader .yellow2{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: #F5E31A;
+    z-index: 8;
+}
+.loader video{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 7;
+}
+.loader h1{
+    font-size: 6vw;
+    font-weight: 100;
+    line-height: 5vw;
+    letter-spacing: -3px;
+    z-index: 10;
+}
+
+.nav{
+    position: absolute;
+    width: 100%;
+    padding: 30px 50px;
+    z-index: 11;
+}
+.nav svg{
+    width: 5vw;
+
+}
+
+#main{
+    background-color: #000000;
+}
+
+.page1{
+    width: 100%;
+    height: 100vh;
+    background-color: #F5E31A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.page1 h1{
+    font-size: 6vw;
+    font-weight: 100;
+    line-height: 5vw;
+    letter-spacing: -3px;
+}
+
+.page2{
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    transition: all ease 0.5s;
+}
+
+.elem{
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.elem h2{
+    font-size: 6.5vw;
+    text-transform: uppercase;
+    font-weight: 100;
+    position: relative;
+    line-height: 5.1vw;
+    z-index: 9;
+}
+
+.elem .moving{
+    background-color: #F5E31A;
+    width: 100%;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%) scaleY(0);
+    padding: 4px 0;
+    transition: all ease 0.2s;
+
+}
+
+.elem .moving .moving-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation: moving 4s linear infinite ;
+    
+   
+}
+
+.elem .moving .moving-in h5{
+    color: #000000;
+    display: inline-block;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-right: 40px;
+    font-family: cursive;
+    font-weight: 500;
+    opacity: 0;
+    transition: all ease 0.2s;
+    transition-delay: 0.2s;
+}
+
+@keyframes moving {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.elem:hover .moving{
+    transform: translate(0,-50%) scaleY(1);
+}
+.elem:hover .moving h5{
+    opacity: 1;
+}
+
+.elem:hover h2{
+    font-style: italic;
+
+}
+
+.elem .blur{
+    background: linear-gradient( to right, #F5E31A,#F5E31A,#F5E31A);
+    box-shadow: -34px 0px 17px -4px #F5E31A, 34px 0px 11px -4px #F5E31A;
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 8;
+}
+
+.page3{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.page3 .img-container{
+    padding: 20px;
+    columns: 3 300px;
+    column-gap: 10px;
+
+}
+
+.img-div{
+     width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    /* padding: 5px; */
+    margin: 5px 0;
+}
+.img-div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease 0.5s;
+}
+.img-div .img-overlay{
+    position: absolute;
+    background-color: #000000aa;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all ease 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 2vw;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 2.4vw;
+}
+.img-div .img-overlay p em{
+    display: block;
+}
+
+.img-div:hover .img-overlay{
+    opacity: 1;
+    z-index: 5;
+}
+.img-div:hover img{
+    scale: 1.1;
+}
+
+.footer{
+    background-color: #ffffff;
+}
+
+.footer .back-to-top{
+    padding: 5vw 0;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.footer .back-to-top p{
+    font-family: fangsong;
+    font-weight: 200;
+    cursor: pointer;
+    width: fit-content;
+}
